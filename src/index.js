@@ -3,6 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import store from './redux/store';
+import {addTodo} from "./redux/actions"
+
+// 스토어의 변경사항을 구독
+store.subscribe(() => {
+  console.log(store.getState());
+
+})
+
+store.dispatch(addTodo("coding"));
+store.dispatch(addTodo("cooking"));
+store.dispatch(addTodo("reading book"));
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
