@@ -1,5 +1,6 @@
 // state
 // ['코딩', '점심 먹기']
+// [{text: '코딩' done: false},{text: '점심 먹기' done: false}]
 
 import { ADD_TODO } from "./actions";
 
@@ -12,7 +13,7 @@ export function todoApp(previousState = initialState, action) {
   // }
 
   if (action.type === ADD_TODO) {
-    return [...previousState, action.todo];
+    return [...previousState, {...action.text}];
   }
 
   return previousState;

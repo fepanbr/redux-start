@@ -12,10 +12,6 @@ store.subscribe(() => {
 
 })
 
-store.dispatch(addTodo("coding"));
-store.dispatch(addTodo("cooking"));
-store.dispatch(addTodo("reading book"));
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
