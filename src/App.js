@@ -3,6 +3,7 @@ import './App.css';
 import { addTodo } from './redux/actions';
 import TodoListContainer from './containers/TodoListContainer';
 import TodoFormContainer from './containers/TodoFormContainer';
+import UserListContainer from './containers/UserListContainer';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <UserListContainer />
         <TodoListContainer />
         <TodoFormContainer />
       </header>

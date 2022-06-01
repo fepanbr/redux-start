@@ -29,3 +29,26 @@ export function showComplete() {
     type: SHOW_COMPLETE,
   }
 }
+
+// users
+export const GET_USERS_START = 'GET_USERS_START';  // 깃험
+export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS';  // 응답성공
+export const GET_USERS_FAIL = 'GET_USERS_FAIL';  // 응답성공
+
+export function getUsersStart() {
+  return {
+    type: GET_USERS_START
+  }
+}
+
+export function getUsersSuccess(data) {
+  return {
+    type: GET_USERS_SUCCESS
+  }
+}
+
+export function getUsersFail(errors) {
+  return {
+    type: GET_USERS_FAIL
+  }
+}
