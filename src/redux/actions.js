@@ -43,7 +43,8 @@ export function getUsersStart() {
 
 export function getUsersSuccess(data) {
   return {
-    type: GET_USERS_SUCCESS
+    type: GET_USERS_SUCCESS,
+    data
   }
 }
 

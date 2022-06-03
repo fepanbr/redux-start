@@ -1,4 +1,4 @@
-import { getUsersStart, GET_USERS_FAIL, GET_USERS_START, GET_USERS_SUCCESS } from "../redux/actions";
+import { GET_USERS_FAIL, GET_USERS_START, GET_USERS_SUCCESS } from "../redux/actions";
 
 const initialState = {
   loading: false,
