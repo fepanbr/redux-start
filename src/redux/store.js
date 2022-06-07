@@ -1,6 +1,8 @@
 import {applyMiddleware, createStore} from "redux";
 import reducer from "../reducers/reducer"
-import {composeDevTools} from 'redux-devtools-extension'
+import {composeWithDevTools} from 'redux-devtools-extension'
+import thunk from "redux-thunk";
+import promise from "redux-promise-middleware";
 
 // function middleware1(store) {
 //   console.log('middleware1', 0);
@@ -33,6 +35,6 @@ import {composeDevTools} from 'redux-devtools-extension'
 // }
 
 
-const store = createStore(reducer, composeDevTools(applyMiddleware()));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, promise)));
 
 export default store;
