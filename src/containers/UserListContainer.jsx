@@ -19,9 +19,5 @@ export default function UserListContainer() {
     }  
   }, [dispatch])
 
-  
-  
-
-
   return <UserList users={users} getUsers={getUsers} />
 }

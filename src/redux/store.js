@@ -1,37 +1,38 @@
 import {applyMiddleware, createStore} from "redux";
 import reducer from "../reducers/reducer"
+import {composeDevTools} from 'redux-devtools-extension'
 
-function middleware1(store) {
-  console.log('middleware1', 0);
-  return (next) => {
-    console.log('middleware1', 1);
-    return action => {
-      console.log('middleware1', 2)
-      const returnValue = next(action);
+// function middleware1(store) {
+//   console.log('middleware1', 0);
+//   return (next) => {
+//     console.log('middleware1', 1);
+//     return action => {
+//       console.log('middleware1', 2)
+//       const returnValue = next(action);
 
-      console.log('middleware1', 3)
+//       console.log('middleware1', 3)
 
-      return returnValue;
-    }
-  }
-}
+//       return returnValue;
+//     }
+//   }
+// }
 
-function middleware2(store) {
-  console.log('middleware2', 0);
-  return (next) => {
-    console.log('middleware2', 1);
-    return action => {
-      console.log('middleware2', 2)
-      const returnValue = next(action);
+// function middleware2(store) {
+//   console.log('middleware2', 0);
+//   return (next) => {
+//     console.log('middleware2', 1);
+//     return action => {
+//       console.log('middleware2', 2)
+//       const returnValue = next(action);
 
-      console.log('middleware2', 3)
+//       console.log('middleware2', 3)
 
-      return returnValue;
-    }
-  }
-}
+//       return returnValue;
+//     }
+//   }
+// }
 
 
-const store = createStore(reducer, applyMiddleware(middleware1, middleware2));
+const store = createStore(reducer, composeDevTools(applyMiddleware()));
 
 export default store;
