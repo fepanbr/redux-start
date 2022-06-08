@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import { addTodo } from './redux/actions';
 import TodoListContainer from './containers/TodoListContainer';
 import TodoFormContainer from './containers/TodoFormContainer';
 import UserListContainer from './containers/UserListContainer';
