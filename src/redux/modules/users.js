@@ -101,11 +101,20 @@ export function getUsersPromise() {
   }
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  })
+}
+
 // redux-thunk
 export function getUsersThunk() {
-  return async (dispatch) => {
+  return async (dispatch, getState, { history }) => {
     try {
       dispatch(getUsersStart())
+      await sleep(2000);
       const res = await axios.get('https://api.github.com/users')
       dispatch(getUsersSuccess(res.data))
     } catch (error) {
